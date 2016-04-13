@@ -9,7 +9,8 @@ import java.util.List;
 import javax.security.auth.kerberos.KerberosKey;
 import javax.swing.text.html.HTMLDocument.HTMLReader.IsindexAction;
 
-public class Main {
+public class Main 
+{
 
 	/*
 	private static long result = 0;
@@ -25,7 +26,8 @@ public class Main {
 		System.out.println(solve(9));
 	}
 	
-	public static List<String> solve(int n){
+	public static List<String> solve(int n)
+	{
 		
 		List<String> returnRes = new ArrayList<String>();
 		
@@ -34,7 +36,8 @@ public class Main {
 		
 		List<String> possibleSymbols = permutation("+-&", list, n-1);
 		
-		for(String symbol : possibleSymbols){
+		for(String symbol : possibleSymbols)
+		{
 			if(isEqual(symbol, 100))
 			{
 				returnRes.add(generateEquation(symbol));
@@ -45,7 +48,8 @@ public class Main {
 		return returnRes;
 	}
 	
-	public static String generateEquation(String symbols){
+	public static String generateEquation(String symbols)
+	{
 		String string = "1";
 		for(int i=0;i<symbols.length();i++)
 		{
@@ -63,16 +67,20 @@ public class Main {
 		return string;
 	}
 	
-	public static boolean isEqual (String symbols, int result){
+	public static boolean isEqual (String symbols, int result)
+	{
 		
 		ArrayList<Integer> list = new ArrayList<Integer>();
 		list.add(1);
 		
-		for (int i=0;i<symbols.length();i++){
+		for (int i=0;i<symbols.length();i++)
+		{
 			
-			if(symbols.charAt(i)=='+'){
+			if(symbols.charAt(i)=='+')
+			{
 				list.add(i+2);
-			}else if(symbols.charAt(i)=='-'){
+			}else if(symbols.charAt(i)=='-')
+			{
 				list.add(-(i+2));
 			}else {
 				int lastdig = list.remove(list.size()-1);
@@ -94,15 +102,18 @@ public class Main {
 		
 		return sum==result;
 	}
-	public static List<String> permutation (String optionChars, List<String> permutation, int length){
+	public static List<String> permutation (String optionChars, List<String> permutation, int length)
+	{
 		
 		if (permutation.get(0).length()==length) return permutation;
 		
 		ArrayList<String> newPermutation = new ArrayList<String>();
 		
-		for (int i=0; i < optionChars.length(); i++){
+		for (int i=0; i < optionChars.length(); i++)
+		{
 			char c = optionChars.charAt(i);
-			for (int j = 0; j < permutation.size(); j++){
+			for (int j = 0; j < permutation.size(); j++)
+			{
 				String perItem = permutation.get(j);
 				newPermutation.add(c + perItem);
 			}
